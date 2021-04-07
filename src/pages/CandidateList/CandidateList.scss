@@ -1,0 +1,22 @@
+.CandidatesSearch{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 15px;
+    text-align: center;
+    
+
+    h2 {
+       margin: 0;
+    }
+}
+
+.CandidateWrapper {
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+   
+}
