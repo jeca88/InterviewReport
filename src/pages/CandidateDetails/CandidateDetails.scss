@@ -1,0 +1,18 @@
+.Header{
+    background-color: lightgray;
+    font-size: 20px;
+    padding: 20px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .back-btn {
+        text-decoration: none;
+        color: black;
+        border: 1px solid grey;
+        padding: 5px;
+
+    }
+}

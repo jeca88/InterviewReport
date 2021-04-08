@@ -1,36 +1,47 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import "./LogIn.scss";
 
-const LogIn = ({Login, error}) => {
-  const [details, setDetails] = useState({name:"", email: "", password: ""});
+const LogIn = () => {
+  const [details, setDetails] = useState({ email: "", password: "" });
 
-  const submitHandler = e => {
+  const { email, password } = details;
+
+  const [token, setToken] = useState([]);
+
+  const submitHandler = (e) => {
     e.preventDefault();
-
-    Login(details);
+    console.log(password);
+    const url = "http://localhost:3333/login";
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      })
+    }).then(data => data.json())
+      .then(data => setToken(data.accessToken))
   }
-   
+
   return (
+
     <form onSubmit={submitHandler}>
       <div className="form-inner">
         <h2>Login</h2>
-        {(error !="") ? (<div className="error">{error}</div>) : ""}
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input type="text" name="name" id="name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
-        </div>
+
         <div className="form-group">
           <label htmlFor="email">Email:</label>
-          <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
+          <input type="email" name="email" id="email" onChange={e =>
+            setDetails({ ...details, email: e.target.value })} value={email} />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
-          <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
+          <input type="password" name="password" id="password" onChange={e =>
+            setDetails({ ...details, password: e.target.value })} value={password} />
         </div>
-        <input type="submit" value="LOGIN" />
+        <input type="submit" value="LOGIN" onClick={submitHandler} />
       </div>
     </form>
-  );
-};
+  )
+}
 
 export default LogIn;

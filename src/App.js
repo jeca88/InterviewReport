@@ -4,7 +4,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Route, Switch, Link, Redirect } from 'react-router-dom'
 
-import Header from './components/Header/Header'
 import CandidateList from './pages/CandidateList/CandidateList';
 import CandidateDetails from './pages/CandidateDetails/CandidateDetails';
 import ReportList from './pages/ReportList/ReportList'
@@ -43,7 +42,7 @@ function App() {
     <div className="App">
       <CandidatesProvider value={candidates}>
         <ReportsProvider value={reports}>
-          <Header />
+
           <Switch>
             <Route exact path="/" component={CandidateList} />
             <Route path="/candidate/:id" component={CandidateDetails} />
