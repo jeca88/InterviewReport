@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import LogIn from '../LogIn/LogIn';
 
 const AppLogIn = () => {
   const adminUser = {
-    email: "balbla@gmail.com",
-    password: "admin1234",
+    email: "dev@dev.com",
+    password: "$2a$10$Ht9ATCnB3LhyEpPg.c/GOuLzkMYD2WRPZ3ZtFVP.uVCrx.nW/rwVq",
   };
 
   const [user, setUser] = useState({ name: "", email: "" });
@@ -11,9 +12,22 @@ const AppLogIn = () => {
 
   const Login = (details) => {
     console.log(details);
+
+    if (details.email == adminUser.email && details.password == adminUser.password) {
+      console.log("Logged in");
+      setUser ({
+        name:details.name,
+        email:details.email
+      })
+    } else {
+      console.log("Details do not match");
+      setError("Details do not match")
+    }
   };
   const Logout = (details) => {
-    console.log("Logout");
+    setUser ({
+      name:"", email:""
+    });
   };
 
   return (
@@ -24,10 +38,10 @@ const AppLogIn = () => {
             {" "}
             Welcome, <span>{user.name}</span>
           </h2>
-          <button> Logout</button>
+          <button onClick={Logout}> Logout</button>
         </div>
       ) : (
-        <LogIn />
+        <LogIn Login={Login} error={error} />
       )}
     </div>
   );
