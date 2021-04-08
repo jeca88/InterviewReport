@@ -1,15 +1,36 @@
 import './CandidateDetails.scss';
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { candidatesContext } from '../../App';
 import { reportsContext } from '../../App'
+import Modal from '../../components/Modal/Modal';
 
 const CandidateDetails = (props) => {
     const candidateDetail = useContext(candidatesContext);
     const reportsDetail = useContext(reportsContext);
 
+    const [modal, setModal] = useState(false);
+    const [report, setReport] = useState(null);
+
     const profile = candidateDetail.find(e => e.id == props.match.params.id);
     const reportsData = reportsDetail.filter(e => e.candidateId == profile.id);
-    console.log(reportsData)
+
+    const showModal = (rep) => {
+        setModal(!modal);
+        setReport(rep);
+    }
+
+    const closeModal = () => {
+        setModal(false);
+    }
+
+    const getRealDate = (e) => {
+        let realDate = new Date(e);
+        let date = realDate.getDate();
+        let month = realDate.getMonth() + 1;
+        let year = realDate.getFullYear();
+
+        return (`${date}/${month < 10 ? `0${month}` : `${month}`}/${year}`)
+    }
 
     return (
         <div className="CandidateDetails">
@@ -19,7 +40,7 @@ const CandidateDetails = (props) => {
                 <h3>Email:{profile.email}</h3>
             </div>
             <div>
-                <h3>Date of Birth:{profile.birthday}</h3>
+                <h3>Date of Birth: {getRealDate(profile.birthday)}</h3>
                 <h3>Education:{profile.education}</h3>
             </div>
 
@@ -35,11 +56,15 @@ const CandidateDetails = (props) => {
                 {reportsData.map(e =>
                     <tr>
                         <td>{e.companyName}</td>
-                        <td>{e.interviewDate}</td>
+                        <td>{getRealDate(e.interviewDate)}</td>
                         <td>{e.status}</td>
+                        <td><span onClick={() => showModal(e)}>M</span></td>
                     </tr>)}
-
             </table>
+            <Modal modal={modal}
+                reportsData={report}
+                handleClose={closeModal}
+                getRealDate={getRealDate} />
         </div>
     )
 }

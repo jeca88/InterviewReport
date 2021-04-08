@@ -8,7 +8,7 @@ const CandidateProfile = ({ candidate }) => {
 
     return (
         <div className="Profile">
-            <Link to={`/candidate/${candidate.id}`}>
+            <Link className="profile-content" to={`/candidate/${candidate.id}`}>
                 <img src={candidate.avatar} />
                 <div>
                     <h4>{candidate.name}</h4>
