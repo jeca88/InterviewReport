@@ -37,7 +37,7 @@ function App() {
       .then(data => setReports(data));
   }, []);
 
-  console.log(reports)
+
 
   return (
     <div className="App">

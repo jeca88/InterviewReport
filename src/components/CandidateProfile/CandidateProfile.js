@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const CandidateProfile = ({ candidate }) => {
 
     return (
+
         <div className="Profile">
             <Link className="profile-content" to={`/candidate/${candidate.id}`}>
                 <img src={candidate.avatar} />
@@ -16,6 +17,7 @@ const CandidateProfile = ({ candidate }) => {
                 </div>
             </Link>
         </div >
+
     )
 }
 
