@@ -1,26 +1,45 @@
 import React, { useState, useEffect } from "react";
 import "./LogIn.scss";
+import { Redirect } from 'react-router-dom'
 
 const LogIn = () => {
   const [details, setDetails] = useState({ email: "", password: "" });
 
   const { email, password } = details;
 
-  const [token, setToken] = useState([]);
+  const [token, setToken] = useState(null);
+
+
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(password);
+
+
     const url = "http://localhost:3333/login";
     fetch(url, {
       method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
         email: email,
         password: password,
       })
-    }).then(data => data.json())
-      .then(data => setToken(data.accessToken))
+    }).then(response => response.json())
+      .then(response => {
+        if (response.accessToken) {
+          setToken(response.accessToken)
+          localStorage.setItem("token", response.accessToken)
+        } else {
+          throw new Error("Wrong email or password. Please try again!")
+        }
+      }).catch((error) => {
+        alert(error);
+      })
+
   }
+
+
 
   return (
 
@@ -39,6 +58,7 @@ const LogIn = () => {
             setDetails({ ...details, password: e.target.value })} value={password} />
         </div>
         <input type="submit" value="LOGIN" onClick={submitHandler} />
+        {token && <Redirect to="/reports" />}
       </div>
     </form>
   )

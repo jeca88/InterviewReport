@@ -42,12 +42,11 @@ function App() {
     <div className="App">
       <CandidatesProvider value={candidates}>
         <ReportsProvider value={reports}>
-
           <Switch>
             <Route exact path="/" component={CandidateList} />
             <Route path="/candidate/:id" component={CandidateDetails} />
             <Route path="/reports" component={ReportList} />
-            <Route path="/newReport" component={Wizard} />
+            <Route path="/new-report" component={Wizard} />
             <Route path="/login" component={LogIn} />
           </Switch>
         </ReportsProvider>
