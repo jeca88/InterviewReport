@@ -1,21 +1,20 @@
 .Profile {
-    width: 28%;
-    border: 1px solid gray;
-    margin-right: 20px;
-    margin-bottom: 30px;
-    padding: 12px;
-    
+  width: 28%;
+  border: 1px solid gray;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 12px;
+  background-color: white;
 
-    .profile-content {
-        text-decoration: none;
-        color: black;
-    }
-   
-    img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
+  .profile-content {
+    text-decoration: none;
+    color: black;
+  }
 
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }
