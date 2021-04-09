@@ -1,8 +1,25 @@
 import './SelectCandidate.scss';
 
-const SelectCandidate = (props) => {
+
+const SelectCandidate = ({ candidates, nextStep, handleChange }) => {
+
     return (
-        <div>SelectCandidate</div>
+        <>
+            <input />
+            <div className="Candidate-Wrapper">
+                {candidates.map(e =>
+                    <div className="Candidate-Content" onClick={() => handleChange(e.name)}>
+                        <img src={e.avatar} alt="logo" />
+                        <div className="Candidate-Info">
+                            <h4>{e.name}</h4>
+                            <p>{e.email}</p>
+                        </div>
+                    </div>
+                )
+                }
+            </div>
+            <button onClick={nextStep}>Next</button>
+        </>
     )
 }
 

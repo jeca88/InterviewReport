@@ -4,6 +4,9 @@ import Modal from '../../components/Modal/Modal';
 
 const Report = ({ report }) => {
 
+    const token = localStorage.getItem('token')
+    console.log(token);
+
     const [modal, setModal] = useState(false);
     const [reportsData, setReportsData] = useState(null);
 
@@ -24,8 +27,15 @@ const Report = ({ report }) => {
     }
     const deleteReport = (e) => {
         const url = "http://localhost:3333/api/reports/";
-        fetch(url + e.id, { method: 'DELETE' })
-            .then(response => console.log(response))
+        fetch(url + e.id, {
+            method: 'DELETE',
+            headers: {
+
+                "Authorization": `Bearer ${token}`,
+            },
+        })
+            .then(response => console.log(response));
+
     }
 
     return (

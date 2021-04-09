@@ -1,0 +1,36 @@
+.reports-cnt {
+    width: 90%;
+    background-color: blue;
+}
+
+.reports-selects {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+
+    .date {
+        width: 30%;
+        text-align: left;
+    }
+
+    .phase {
+        width: 30%;
+        text-align: left;
+    }
+
+    .status {
+        width: 30%;
+        text-align: left;
+    }
+}
+
+.notes {
+    width: 90%;
+    text-align: left;
+    margin: 15px;
+
+    textarea {
+        width: 100%;
+        height: 300px;
+    }
+}
