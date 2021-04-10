@@ -2,7 +2,7 @@ import './Report.scss';
 import React, { useState, useEffect } from 'react';
 import Modal from '../../components/Modal/Modal';
 
-const Report = ({ report }) => {
+const Report = ({ report, setReports }) => {
 
     const token = localStorage.getItem('token')
     console.log(token);
@@ -34,7 +34,7 @@ const Report = ({ report }) => {
                 "Authorization": `Bearer ${token}`,
             },
         })
-            .then(response => console.log(response));
+            .then(response => response.ok && setReports(null));
 
     }
 

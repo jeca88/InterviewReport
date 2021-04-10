@@ -6,14 +6,24 @@ import Modal from "../../components/Modal/Modal";
 import { Link } from "react-router-dom";
 
 const CandidateDetails = (props) => {
+<<<<<<< HEAD
   const candidates = useContext(candidatesContext);
   const reportsDetail = useContext(reportsContext);
+=======
+    const candidates = useContext(candidatesContext);
+    const { reports, setReports } = useContext(reportsContext);
+>>>>>>> dulence
 
   const [modal, setModal] = useState(false);
   const [report, setReport] = useState(null);
 
+<<<<<<< HEAD
   const profile = candidates.find((e) => e.id == props.match.params.id);
   const reportsData = reportsDetail.filter((e) => e.candidateId == profile.id);
+=======
+    const profile = candidates.find(e => e.id == props.match.params.id);
+    const reportsData = reports && reports.filter(e => e.candidateId == profile.id);
+>>>>>>> dulence
 
   const showModal = (rep) => {
     setModal(!modal);
@@ -61,6 +71,7 @@ const CandidateDetails = (props) => {
           </div>
         </div>
 
+<<<<<<< HEAD
         <div className="Table">
           <h3>Reports</h3>
         </div>
@@ -91,5 +102,32 @@ const CandidateDetails = (props) => {
     </>
   );
 };
+=======
+                <div className="Table">
+                    <h3>Reports</h3>
+                </div>
+                <table className="TableGrid">
+                    <tr>
+                        <th>Company</th>
+                        <th>Inteview date</th>
+                        <th colSpan="2">Status</th>
+                    </tr>
+                    {reportsData && reportsData.map(e =>
+                        <tr>
+                            <td>{e.companyName}</td>
+                            <td>{getRealDate(e.interviewDate)}</td>
+                            <td>{e.status}</td>
+                            <td><span onClick={() => showModal(e)}>M</span></td>
+                        </tr>)}
+                </table>
+                <Modal modal={modal}
+                    reportsData={report}
+                    handleClose={closeModal}
+                    getRealDate={getRealDate} />
+            </div>
+        </>
+    )
+}
+>>>>>>> dulence
 
 export default CandidateDetails;
