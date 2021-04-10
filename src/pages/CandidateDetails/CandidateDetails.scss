@@ -1,18 +1,79 @@
-.Header{
-    background-color: lightgray;
-    font-size: 20px;
-    padding: 20px;
-    font-weight: 600;
+.Header {
+  background-color: white;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  .back-btn {
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(26, 115, 232);
+    color: white;
+    border: 1px solid grey;
+    padding: 5px 10px 10px 10px;
+    border-radius: 20px;
+  }
+}
+.Table h3 {
+  text-align: left;
+  font-style: italic;
+  margin: 20px;
+  padding-left: 60px;
+}
+
+table {
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: rgb(172, 168, 168);
+  margin: 20px auto;
+  width: 90%;
+  border: 1px dotted black;
+  tr {
+    background-color: rgb(212, 207, 207);
+  }
+  tr:nth-child(even) td {
+    background-color: rgb(125, 125, 231);
+  }
+  tr:nth-child(odd) td {
+    background-color: pink;
+  }
+  th,
+  td {
+    padding: 10px;
+  }
+
+  th {
+    background-color: rgb(228, 228, 101);
+    font-style: italic;
+  }
+  span {
+    padding: 0px;
+  }
+}
+
+.Info {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  margin: 50px;
+  font-size: 15px;
+  font-weight: normal;
+
+  h3 {
+    font-weight: normal;
     text-align: left;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-
-    .back-btn {
-        text-decoration: none;
-        color: black;
-        border: 1px solid grey;
-        padding: 5px;
-
-    }
+    padding-top: 10px 0 20px 0;
+  }
+  p {
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+  }
 }
