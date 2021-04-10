@@ -19,7 +19,7 @@ const { Provider: ReportsProvider } = reportsContext;
 
 function App() {
   const [candidates, setCandidates] = useState([]);
-  const [reports, setReports] = useState([]);
+  const [reports, setReports] = useState(null);
 
 
   useEffect(() => {
@@ -34,14 +34,14 @@ function App() {
     fetch(url)
       .then(response => response.json())
       .then(data => setReports(data));
-  }, []);
+  }, [reports === null]);
 
 
 
   return (
     <div className="App">
       <CandidatesProvider value={candidates}>
-        <ReportsProvider value={reports}>
+        <ReportsProvider value={{ reports, setReports }}>
           <Switch>
             <Route exact path="/" component={CandidateList} />
             <Route path="/candidate/:id" component={CandidateDetails} />
