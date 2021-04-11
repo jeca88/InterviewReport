@@ -16,17 +16,19 @@ const ReportList = (props) => {
       }
 
     return (
-        <>
+        <div className="reportList">
             <div className="Header">
                 <div className="Logo">Interview Reports</div>
                 <Link className="newReport-btn" to='/new-report'>Create Report</Link>
             </div>
-            < Search items={reports} filters = {filters} 
-            updateResults={updateFilteredReports}/>
-            <div className="ReportList">
-                {filteredReports && filteredReports.map(rep => <Report report={rep} setReports={setReports} />)}
+            <div className="report-content">
+                < Search items={reports} filters = {filters} 
+                updateResults={updateFilteredReports}/>
+                <div className="report">
+                    {filteredReports && filteredReports.map(rep => <Report report={rep} setReports={setReports} />)}
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 

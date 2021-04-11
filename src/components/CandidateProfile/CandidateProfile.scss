@@ -1,14 +1,17 @@
 .Profile {
   width: 28%;
-  border: 1px solid gray;
+  min-width: 200px;
+  border: none;
   margin-right: 20px;
   margin-bottom: 30px;
-  padding: 12px;
+  padding: 20px 15px;
   background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 0.5px #77c5d4;
 
   .profile-content {
     text-decoration: none;
-    color: black;
+    color: rgb(24, 119, 242);
   }
 
   img {

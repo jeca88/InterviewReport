@@ -39,8 +39,10 @@ const FillReportDetails = ({ prevStep, setInfoReport, infoReport, submitForm }) 
             <div className='notes'>
                 <textarea onChange={e => setInfoReport({ ...infoReport, notes: e.target.value })}></textarea>
             </div>
-            <button onClick={prevStep}>Prev</button>
-            <button onClick={submitForm}>Submit</button>
+            <div className="btns-cnt">
+                <button className="prev" onClick={prevStep}>Prev</button>
+                <button className="submit" onClick={submitForm}>Submit</button>
+            </div>
         </div>
     )
 }

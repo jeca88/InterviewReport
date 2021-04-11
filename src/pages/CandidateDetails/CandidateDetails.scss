@@ -14,8 +14,13 @@
     background-color: rgb(26, 115, 232);
     color: white;
     border: 1px solid grey;
-    padding: 5px 10px 10px 10px;
+    padding: 7px 15px;
+    font-size: 18px;
     border-radius: 20px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 .Table h3 {

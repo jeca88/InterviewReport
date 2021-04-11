@@ -4,10 +4,9 @@ import { Redirect } from "react-router-dom";
 
 const LogIn = () => {
   const [details, setDetails] = useState({ email: "", password: "" });
-
   const { email, password } = details;
-
   const [token, setToken] = useState(null);
+  const [errMessage, setErrMessage] = useState('');
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -33,14 +32,16 @@ const LogIn = () => {
         }
       })
       .catch((error) => {
-        alert(error);
+        setErrMessage(error.message);
       });
   };
 
   return (
+    <div className="logIn">
     <form onSubmit={submitHandler}>
       <div className="form-inner">
         <h2>Log in</h2>
+        {errMessage && <span className="errMessage">{errMessage}</span>}
 
         <div className="form-group">
           <label htmlFor="email">Email: </label>
@@ -64,10 +65,11 @@ const LogIn = () => {
             value={password}
           />
         </div>
-        <input type="submit" value="LOGIN" onClick={submitHandler} />
+        <input className='login-btn' type="submit" value="LOGIN" onClick={submitHandler} />
         {token && <Redirect to="/reports" />}
       </div>
     </form>
+    </div>
   );
 };
 

@@ -10,13 +10,18 @@
 .Header {
   background-color: white;
   color: rgb(24, 119, 242);
-  font-size: 20px;
-  padding: 20px;
+  padding: 10px;
   font-weight: 1000;
   text-align: left;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  box-shadow: 0 0 10px 0.9px #699399;
+
+  .Logo {
+    font-size: 30px;
+   
+  }
 
   .login-btn {
     text-decoration: none;
@@ -24,8 +29,16 @@
     background-color: rgb(24, 119, 242);
     color: white;
     border: 1px solid grey;
-    padding: 5px 10px 10px 10px;
-    border-radius: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px 0.5px #555f61;
+    font-size: 18px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -38,6 +51,7 @@
 
   h2 {
     margin: 0;
-    color: black;
+    color:rgb(24, 119, 242);
+    font-style: oblique;
   }
 }

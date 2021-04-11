@@ -23,8 +23,8 @@ const SelectCompany = ({ nextStep, prevStep, handleChange }) => {
                 }
             </ul>
             <div className="btns">
-                <button onClick={prevStep}>Prev</button>
-                <button onClick={nextStep} >Next</button>
+                <button className="prev" onClick={prevStep}>Prev</button>
+                <button className="next" onClick={nextStep} >Next</button>
             </div>
         </div>
     )

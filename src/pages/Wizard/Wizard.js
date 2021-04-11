@@ -74,9 +74,9 @@ const Wizard = (props) => {
         </div>
         <div className="Container-Page">
             <div className="Navigator-Page">
-                <h3>Select Candidate</h3>
-                <h3>Select Company</h3>
-                <h3>Fill Report Details</h3>
+                <h3><span>1</span>Select Candidate</h3>
+                <h3><span>2</span>Select Company</h3>
+                <h3><span>3</span>Fill Report Details</h3>
             </div>
             <div className="Switch">
                 {switchSections()}

@@ -6,7 +6,7 @@ import Modal from "../../components/Modal/Modal";
 import { Link } from "react-router-dom";
 
 const CandidateDetails = (props) => {
-  const candidates = useContext(candidatesContext);
+  const {candidates} = useContext(candidatesContext);
   const { reports, setReports } = useContext(reportsContext);
 
   const [modal, setModal] = useState(false);
@@ -60,9 +60,6 @@ const CandidateDetails = (props) => {
             <h3>{profile.education}</h3>
           </div>
         </div>
-
-
-
                 <div className="Table">
                     <h3>Reports</h3>
                 </div>

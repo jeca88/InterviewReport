@@ -28,7 +28,7 @@ const SelectCandidate = ({ candidates, nextStep, handleChange, filteredCandidate
                 )
                 }
             </div>
-            <button onClick={nextStep}>Next</button>
+            <button className="next" onClick={nextStep}>Next</button>
         </>
     )
 }

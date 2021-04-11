@@ -57,8 +57,8 @@ const Report = ({ report, setReports }) => {
                 <p>Status</p>
             </div>
             <div className='report-icon'>
-                <span onClick={() => showModal(report)} > &#128065;</span>
-                <span onClick={() => deleteReport(report)}>&#10005;</span>
+                <span className='eye' onClick={() => showModal(report)} > &#128065;</span>
+                <span className='delete' onClick={() => deleteReport(report)}>&#10005;</span>
             </div>
             <Modal handleClose={closeModal}
                 reportsData={reportsData}

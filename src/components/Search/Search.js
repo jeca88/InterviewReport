@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Search.css';
+import './Search.scss';
 
 var _ = require('lodash');
 
@@ -30,9 +30,12 @@ const Search = ({ items, filters, updateResults}) => {
        
    
     return(
-    <div>
+    <div className='search'>
         <input value={searchValue} onChange={e => setSearchValue(e.target.value)}/>
-    </div>)
+        <i class="fas fa-search"></i>
+        
+    </div>
+    )
 }
 
 export default Search;

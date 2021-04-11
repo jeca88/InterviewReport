@@ -2,11 +2,30 @@
     display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
+    padding: 20px;
 }
 .Navigator-Page{
     width: 25%;
     text-align: left;
+    margin-left: 20px;
+    padding-top: 35px;
+
+    h3 {
+        font-size: 20px;
+
+        span {
+            padding: 5px 12px;
+            border: 2px solid black;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+    }
 }
 .Switch {
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 5px;
+   
 }

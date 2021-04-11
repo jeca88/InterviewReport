@@ -2,14 +2,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 0;
+    
 }
 .Candidate-Content {
     width: 45%;
+    min-width: 400px;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 15px; 
-    border: 1px solid darkgray;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0.9px #699399;
+
         img {
             width: 20%;
             border-radius: 50%;
@@ -17,4 +23,24 @@
             object-fit: cover;
 
         }
+
+        
+}
+
+.next {
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(24, 119, 242);
+    color: white;
+    border: 1px solid grey;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px 0.5px #555f61;
+    font-size: 18px;
+
+    &:hover {
+        transform: scale(1.1);
+      }
 }

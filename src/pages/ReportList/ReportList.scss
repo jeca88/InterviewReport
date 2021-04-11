@@ -10,8 +10,27 @@
 
   .newReport-btn {
     text-decoration: none;
-    color: black;
+    text-align: center;
+    background-color: rgb(24, 119, 242);
+    color: white;
     border: 1px solid grey;
-    padding: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px 0.5px #555f61;
+    font-size: 18px;
+
+    &:hover {
+      transform: scale(1.1);
+  }
+}
+}
+
+.report-content {
+  padding: 20px;
+
+  .report {
+    margin: 40px;
   }
 }
