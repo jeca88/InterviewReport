@@ -34,7 +34,7 @@ const Report = ({ report, setReports }) => {
                 "Authorization": `Bearer ${token}`,
             },
         })
-            .then(response => response.ok && setReports(null));
+            .then(response => response.ok && setReports(null) );
 
     }
 

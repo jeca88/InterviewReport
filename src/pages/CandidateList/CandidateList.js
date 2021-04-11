@@ -1,13 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./CandidateList.scss";
 import CandidateProfile from "../../components/CandidateProfile/CandidateProfile";
-
+import Search from '../../components/Search/Search';
 import { Link } from "react-router-dom";
 
 import { candidatesContext } from "../../App";
 
+
 const CandidateList = (props) => {
-  const candidates = useContext(candidatesContext);
+  const {candidates, filteredCandidates, setFilteredCandidates} = useContext(candidatesContext);
+
+  const filters = ['name'];
+
+  const updateFilteredCandidates = (filtered) => {
+    setFilteredCandidates(filtered);
+  }
 
   return (
     <>
@@ -20,12 +27,14 @@ const CandidateList = (props) => {
       <div className="CandidateContainer">
         <div className="CandidatesSearch">
           <h2>Candidates</h2>
-          <input className="SearchOne" />
+          <Search items={candidates}
+           filters = {filters} 
+           updateResults={updateFilteredCandidates}
+           />
         </div>
         <div className="CandidateWrapper">
-          {candidates &&
-            candidates.map((candidate) => (
-              <CandidateProfile candidate={candidate} />
+           {filteredCandidates.map((candidate) => (
+              <CandidateProfile  candidate={candidate}/>
             ))}
         </div>
       </div>

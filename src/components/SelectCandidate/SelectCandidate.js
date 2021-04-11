@@ -1,13 +1,23 @@
 import './SelectCandidate.scss';
+import Search from '../../components/Search/Search';
 
 
-const SelectCandidate = ({ candidates, nextStep, handleChange }) => {
+const SelectCandidate = ({ candidates, nextStep, handleChange, filteredCandidates, setFilteredCandidates }) => {
+
+    const filters = ['name'];
+
+    
+  const updateFilteredCandidates = (filtered) => {
+    setFilteredCandidates(filtered);
+  }
 
     return (
         <>
-            <input />
+           <Search items={candidates}
+           filters = {filters} 
+           updateResults={updateFilteredCandidates}/>
             <div className="Candidate-Wrapper">
-                {candidates.map(e =>
+                {filteredCandidates.map(e =>
                     <div className="Candidate-Content" onClick={() => handleChange(e.name)}>
                         <img src={e.avatar} alt="logo" />
                         <div className="Candidate-Info">

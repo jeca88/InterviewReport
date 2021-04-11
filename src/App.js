@@ -18,30 +18,40 @@ const { Provider: CandidatesProvider } = candidatesContext;
 const { Provider: ReportsProvider } = reportsContext;
 
 function App() {
+  const [filteredCandidates, setFilteredCandidates] = useState([]);
   const [candidates, setCandidates] = useState([]);
+  const [filteredReports, setFilteredReports] = useState(null);
   const [reports, setReports] = useState(null);
 
+  
 
   useEffect(() => {
     const url = "http://localhost:3333/api/candidates";
     fetch(url)
       .then(response => response.json())
-      .then(data => setCandidates(data));
-  }, []);
+      .then(data => {
+        setFilteredCandidates(data);
+        setCandidates(data)
+      });
+  }, [candidates === null]);
 
   useEffect(() => {
     const url = "http://localhost:3333/api/reports";
     fetch(url)
       .then(response => response.json())
-      .then(data => setReports(data));
+      .then(data => {
+        setReports(data)
+        setFilteredReports(data);
+      }) 
   }, [reports === null]);
 
 
 
   return (
     <div className="App">
-      <CandidatesProvider value={candidates}>
-        <ReportsProvider value={{ reports, setReports }}>
+      <CandidatesProvider 
+      value={{candidates, filteredCandidates, setFilteredCandidates}}>
+        <ReportsProvider value={{ reports, setReports, setFilteredReports, filteredReports }}>
           <Switch>
             <Route exact path="/" component={CandidateList} />
             <Route path="/candidate/:id" component={CandidateDetails} />

@@ -1,6 +1,6 @@
 import './Wizard.scss';
 import React, { useState, useContext } from 'react'
-import { candidatesContext } from '../../App';
+import { candidatesContext, reportsContext } from '../../App';
 import SelectCandidate from '../../components/SelectCandidate/SelectCandidate'
 import SelectCompany from '../../components/SelectCompany/SelectCompany'
 import FillReportDetails from '../../components/FillReportDetails/FillReportDetails'
@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom'
 
 const Wizard = (props) => {
 
-    const candidates = useContext(candidatesContext);
+    const {candidates, filteredCandidates, setFilteredCandidates } = useContext(candidatesContext);
+    const {setReports} = useContext(reportsContext)
 
 
     const [step, setStep] = useState(1)
@@ -28,7 +29,6 @@ const Wizard = (props) => {
 
     const submitForm = () => {
         const url = "http://localhost:3333/api/reports/";
-        const id = "789658744";
         fetch(url, {
             method: 'POST',
             headers: {
@@ -36,7 +36,6 @@ const Wizard = (props) => {
                 "Authorization": `Bearer ${token}`,
             },
             body: JSON.stringify({
-                id: id,
                 candidateName: name,
                 companyName: company,
                 interviewDate: infoReport.interviewDate,
@@ -45,7 +44,7 @@ const Wizard = (props) => {
                 note: infoReport.notes
             })
 
-        }).then(response => console.log(response))
+        }).then(response => setReports(null))
     }
 
 
@@ -53,7 +52,12 @@ const Wizard = (props) => {
     const switchSections = () => {
         switch (step) {
             case 1:
-                return (<SelectCandidate candidates={candidates} nextStep={nextStep} handleChange={setName} />)
+                return (<SelectCandidate candidates={candidates} 
+                    nextStep={nextStep} handleChange={setName} 
+                    filteredCandidates={filteredCandidates}
+                    setFilteredCandidates={setFilteredCandidates}
+                    
+                    />)
             case 2:
                 return (<SelectCompany nextStep={nextStep} prevStep={prevStep} handleChange={setCompany} />)
             case 3:
