@@ -1,3 +1,11 @@
+.Logo{
+text-shadow: 2px 2px 4px rgb(175, 172, 172);
+}
+
+.logIn-btn {
+    text-shadow: 0;
+}
+
 .Container-Page{
     display: flex;
     justify-content:space-between;
@@ -7,15 +15,17 @@
 .Navigator-Page{
     width: 25%;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 25px;
     padding-top: 35px;
+    font-weight: 600;
 
     h3 {
         font-size: 20px;
+      
 
         span {
-            padding: 5px 12px;
-            border: 2px solid black;
+            padding: 5px 15px;
+            border-right: 2px solid black;
             border-radius: 50%;
             margin-right: 15px;
         }
@@ -28,4 +38,24 @@
     align-items: flex-end;
     padding: 5px;
    
+}
+.Active {
+    color: #1877f2;
+    font-weight: bold;
+}
+
+.State-Status {
+    margin-top: 80px;
+    border-top: 2px solid black;
+        h6{
+            font-size: 16px;
+            margin-bottom: 5px;
+             margin-left: 10%;
+        }
+
+        p{
+            margin: 0;
+            padding: 0;
+            margin-left: 10%;
+        }
 }

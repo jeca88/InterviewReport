@@ -1,10 +1,13 @@
+.CandidateContainer{
+  margin-top: 40px;
+}
 .CandidateWrapper {
   justify-content: space-between;
   width: 80%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .Header {
@@ -29,11 +32,10 @@
     background-color: rgb(24, 119, 242);
     color: white;
     border: 1px solid grey;
-    padding: 5px 10px;
+    padding: 7px 51px;
     border-radius: 20px;
     border: none;
     outline: none;
-    box-shadow: 0 0 5px 0.5px #555f61;
     font-size: 18px;
 
     &:hover {
@@ -48,10 +50,32 @@
   justify-content: space-between;
   padding: 0 15px;
   text-align: center;
+  width: 80%;
+  margin: 0 auto;
 
   h2 {
     margin: 0;
     color:rgb(24, 119, 242);
-    font-style: oblique;
+    font-weight: 700;
   }
+}
+
+
+
+@media only screen and (max-width: 970px) {
+  .CandidateWrapper {
+    justify-content: center;
+  }
+ 
+}
+
+@media only screen and (max-width: 700px) {
+
+   .CandidatesSearch {
+    justify-content: center;
+  }
+  .CandidatesSearch h2 {
+    margin-bottom: 20px;
+  }
+ 
 }

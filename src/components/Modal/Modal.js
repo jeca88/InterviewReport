@@ -9,10 +9,10 @@ const Modal = ({ reportsData, handleClose, modal, getRealDate }) => {
             <section className="modal-main">
                 <h3>{reportsData.candidateName}</h3>
                 <div>
-                    <p>Company {reportsData.companyName}</p>
-                    <p>Interview Date {getRealDate(reportsData.interviewDate)}</p>
-                    <p>Phase {reportsData.phase}</p>
-                    <p>Status {reportsData.status}</p>
+                    <p>Company: {reportsData.companyName}</p>
+                    <p>Interview Date: {getRealDate(reportsData.interviewDate)}</p>
+                    <p>Phase: {reportsData.phase}</p>
+                    <p>Status: {reportsData.status}</p>
                 </div>
                 <div>
                     <h3>Notes</h3>

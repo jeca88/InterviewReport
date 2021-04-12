@@ -18,10 +18,12 @@
 
         p {
             margin: 0;
+            margin-bottom: 5%;
         }
 
         .react-datepicker-wrapper {
             width: 100%;
+
             
             input {
                 padding: 5px;
@@ -29,7 +31,13 @@
                 outline: none;
                 border-radius: 8px;
                 box-shadow: 0 0 10px 0.9px #699399;
+
+                &:hover {
+                    cursor: pointer;
+                    
+                }
             }
+
         }
     }
 
@@ -39,6 +47,7 @@
 
         p {
             margin: 0;
+            margin-bottom: 5%;
         }
 
         select {
@@ -48,8 +57,15 @@
             outline: none;
             border-radius: 8px;
             box-shadow: 0 0 10px 0.9px #699399;
+
+            &:hover {
+                cursor: pointer;
+                
+            }
            
         }
+
+        
     }
 
     .status {
@@ -58,6 +74,7 @@
 
         p {
             margin: 0;
+            margin-bottom: 5%;
         }
 
         select {
@@ -67,6 +84,11 @@
             outline: none;
             border-radius: 8px;
             box-shadow: 0 0 10px 0.9px #699399;
+
+            &:hover {
+                cursor: pointer;
+                
+            }
         }
     }
 }
@@ -74,6 +96,7 @@
 .notes {
     width: 96%;
     margin-left: 16px;
+    margin-top: 2%;
 
     textarea {
         width: 100%;
@@ -101,7 +124,7 @@
         border-radius: 20px;
         border: none;
         outline: none;
-        box-shadow: 0 0 5px 0.5px #555f61;
+      
         font-size: 18px;
 
             &:hover {
@@ -112,14 +135,14 @@
      .submit {
         text-decoration: none;
         text-align: center;
-        background-color: rgb(8, 76, 155);
+        background-color:#1877f2;;
         color: white;
         border: 1px solid grey;
-        padding: 8px 12px;
+        padding: 8px 24px;
         border-radius: 20px;
         border: none;
         outline: none;
-        box-shadow: 0 0 5px 0.5px #555f61;
+     
         font-size: 18px;
 
             &:hover {

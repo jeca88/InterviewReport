@@ -6,19 +6,19 @@ const SelectCandidate = ({ candidates, nextStep, handleChange, filteredCandidate
 
     const filters = ['name'];
 
-    
-  const updateFilteredCandidates = (filtered) => {
-    setFilteredCandidates(filtered);
-  }
+
+    const updateFilteredCandidates = (filtered) => {
+        setFilteredCandidates(filtered);
+    }
 
     return (
         <>
-           <Search items={candidates}
-           filters = {filters} 
-           updateResults={updateFilteredCandidates}/>
+            <Search items={candidates}
+                filters={filters}
+                updateResults={updateFilteredCandidates} />
             <div className="Candidate-Wrapper">
                 {filteredCandidates.map(e =>
-                    <div className="Candidate-Content" onClick={() => handleChange(e.name)}>
+                    <div className="Candidate-Content" onClick={() => handleChange(e.name, e.candidateId)}>
                         <img src={e.avatar} alt="logo" />
                         <div className="Candidate-Info">
                             <h4>{e.name}</h4>

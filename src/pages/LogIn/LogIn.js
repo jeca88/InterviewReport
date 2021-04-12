@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 const LogIn = () => {
   const [details, setDetails] = useState({ email: "", password: "" });
   const { email, password } = details;
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('token'));
   const [errMessage, setErrMessage] = useState('');
 
   const submitHandler = (e) => {
@@ -38,37 +38,38 @@ const LogIn = () => {
 
   return (
     <div className="logIn">
-    <form onSubmit={submitHandler}>
-      <div className="form-inner">
-        <h2>Log in</h2>
-        {errMessage && <span className="errMessage">{errMessage}</span>}
+      <form onSubmit={submitHandler}>
+        <div className="form-inner">
+          <h2>Log in</h2>
+          {errMessage && <span className="errMessage">{errMessage}</span>}
 
-        <div className="form-group">
-          <label htmlFor="email">Email: </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            onChange={(e) => setDetails({ ...details, email: e.target.value })}
-            value={email}
-          />
+          <div className="form-group">
+            <label htmlFor="email">Email: </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              onChange={(e) => setDetails({ ...details, email: e.target.value })}
+              value={email}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password: </label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              onChange={(e) =>
+                setDetails({ ...details, password: e.target.value })
+              }
+              value={password}
+            />
+          </div>
+          <input className='login-btn' type="submit" value="LOGIN" onClick={submitHandler} />
+          {token && <Redirect to="/reports" />}
+
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password: </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={(e) =>
-              setDetails({ ...details, password: e.target.value })
-            }
-            value={password}
-          />
-        </div>
-        <input className='login-btn' type="submit" value="LOGIN" onClick={submitHandler} />
-        {token && <Redirect to="/reports" />}
-      </div>
-    </form>
+      </form>
     </div>
   );
 };

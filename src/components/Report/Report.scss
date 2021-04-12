@@ -1,10 +1,10 @@
 .Report-container {
-    width: 80%;
+    width: 100%;
     margin: 20px auto;
     display: flex;
     align-items: center;
     text-align: left;
-    padding: 10px;
+    padding: 10px 0;
     border: none;
     outline: none;
     border-radius: 8px;
@@ -21,8 +21,9 @@
 }
 
 .report-company {
- width: 35%;
+    width: 35%;
     border-right: solid 1px darkgray;
+    padding-left: 3%;
 }
 
 .report-candidate {
@@ -49,7 +50,10 @@
 .report-icon {
     width: 10%;
     text-align: centar;
-    margin-left: 15px;
+   
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 
     span {
         font-size: 25px;
@@ -57,10 +61,29 @@
         cursor: pointer;
 
      }
-
         :nth-child(2) {
             font-size: 20px;
        
-        }
+     }
    }
   
+
+   @media only screen and (max-width: 970px) {
+    .report-candidate {
+        margin-left: 10px;
+        font-size: 15px;
+       }
+    .report-company {
+        padding-left: 3%;
+        font-size: 15px;
+    }
+    .report-date {
+        margin-left: 10px;
+        font-size: 15px;
+    }
+    .report-status {
+        font-size: 15px;
+      
+    }
+   
+}

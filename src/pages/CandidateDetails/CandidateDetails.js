@@ -6,14 +6,15 @@ import Modal from "../../components/Modal/Modal";
 import { Link } from "react-router-dom";
 
 const CandidateDetails = (props) => {
-  const {candidates} = useContext(candidatesContext);
+  const { candidates } = useContext(candidatesContext);
   const { reports, setReports } = useContext(reportsContext);
 
   const [modal, setModal] = useState(false);
   const [report, setReport] = useState(null);
 
   const profile = candidates.find(e => e.id == props.match.params.id);
-  const reportsData = reports && reports.filter(e => e.candidateId == profile.id);
+  const reportsData = reports && reports.filter(e => e.candidateName == profile.name);
+  console.log(reportsData);
 
   const showModal = (rep) => {
     setModal(!modal);
@@ -47,43 +48,44 @@ const CandidateDetails = (props) => {
       <div className="CandidateDetails">
         <div className="Info">
           <img src={profile.avatar} />
-          <div>
-            <p>Name: </p>
-            <h3>{profile.name}</h3>
-            <p>Email: </p>
-            <h3>{profile.email}</h3>
-          </div>
-          <div>
-            <p>Date of Birth: </p>
-            <h3>{getRealDate(profile.birthday)}</h3>
-            <p>Education: </p>
-            <h3>{profile.education}</h3>
-          </div>
-        </div>
-                <div className="Table">
-                    <h3>Reports</h3>
-                </div>
-                <table className="TableGrid">
-                    <tr>
-                        <th>Company</th>
-                        <th>Inteview date</th>
-                        <th colSpan="2">Status</th>
-                    </tr>
-                    {reportsData && reportsData.map(e =>
-                        <tr>
-                            <td>{e.companyName}</td>
-                            <td>{getRealDate(e.interviewDate)}</td>
-                            <td>{e.status}</td>
-                            <td><span onClick={() => showModal(e)}>M</span></td>
-                        </tr>)}
-                </table>
-                <Modal modal={modal}
-                    reportsData={report}
-                    handleClose={closeModal}
-                    getRealDate={getRealDate} />
+          <div className='content'>
+            <div>
+              <p>Name: </p>
+              <h3>{profile.name}</h3>
+              <p>Email: </p>
+              <h3>{profile.email}</h3>
             </div>
-        </>
-    )
+            <div>
+              <p>Date of Birth: </p>
+              <h3>{getRealDate(profile.birthday)}</h3>
+              <p>Education: </p>
+              <h3>{profile.education}</h3>
+            </div>
+          </div>
+
+        </div>
+
+        <table className="TableGrid">
+          <tr>
+            <th>Company</th>
+            <th>Interview Date</th>
+            <th colSpan="2">Status</th>
+          </tr>
+          {reportsData && reportsData.map(e =>
+            <tr>
+              <td>{e.companyName}</td>
+              <td>{getRealDate(e.interviewDate)}</td>
+              <td>{e.status}</td>
+              <td><span className='eye' onClick={() => showModal(e)}> &#128065;</span></td>
+            </tr>)}
+        </table>
+        <Modal modal={modal}
+          reportsData={report}
+          handleClose={closeModal}
+          getRealDate={getRealDate} />
+      </div>
+    </>
+  )
 }
 
 export default CandidateDetails;

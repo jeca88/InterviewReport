@@ -30,11 +30,10 @@ const Report = ({ report, setReports }) => {
         fetch(url + e.id, {
             method: 'DELETE',
             headers: {
-
                 "Authorization": `Bearer ${token}`,
             },
         })
-            .then(response => response.ok && setReports(null) );
+            .then(response => response.ok && setReports(null));
 
     }
 
@@ -53,7 +52,7 @@ const Report = ({ report, setReports }) => {
                 <p>Interview Date</p>
             </div>
             <div className='report-status'>
-                <h3>{report.status}</h3>
+                <h3>{report.status.charAt(0).toUpperCase() + report.status.slice(1)}</h3>
                 <p>Status</p>
             </div>
             <div className='report-icon'>

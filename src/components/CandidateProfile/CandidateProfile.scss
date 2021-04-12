@@ -1,13 +1,14 @@
 .Profile {
   width: 28%;
-  min-width: 200px;
+  min-width: 330px;
   border: none;
   margin-right: 20px;
   margin-bottom: 30px;
   padding: 20px 15px;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0 0 5px 0.5px #77c5d4;
+  box-shadow: 0 0 5px 0.5px rgba($color:  rgb(24, 119, 242), $alpha: 0.9);
+  
 
   .profile-content {
     text-decoration: none;
@@ -18,6 +19,22 @@
     width: 150px;
     height: 150px;
     object-fit: cover;
+    padding: 1%;
     border-radius: 50%;
+    border: 2px solid  rgb(24, 119, 242) ;
   }
+}
+
+// .Profile:nth-child(3n) {
+//   margin-right: 0;
+// }
+
+.Profile:hover{
+  transform: scale(1.1,1.1);
+  background-color:rgb(24, 119, 242);
+  font-weight: bold;
+ 
+    .profile-content {
+      color: white;
+    }
 }

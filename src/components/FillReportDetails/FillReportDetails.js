@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const FillReportDetails = ({ prevStep, setInfoReport, infoReport, submitForm }) => {
 
-    const { interviewDate, status } = infoReport;
+    const { interviewDate } = infoReport;
 
     const DatePick = () => {
 
@@ -40,7 +40,7 @@ const FillReportDetails = ({ prevStep, setInfoReport, infoReport, submitForm }) 
                 <textarea onChange={e => setInfoReport({ ...infoReport, notes: e.target.value })}></textarea>
             </div>
             <div className="btns-cnt">
-                <button className="prev" onClick={prevStep}>Prev</button>
+                <button className="prev" onClick={prevStep}>Previous</button>
                 <button className="submit" onClick={submitForm}>Submit</button>
             </div>
         </div>

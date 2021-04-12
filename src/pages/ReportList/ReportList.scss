@@ -1,36 +1,69 @@
 .Header {
   background-color: white;
   font-size: 20px;
-  padding: 20px;
+  padding: 25px 20px;
   font-weight: 600;
   text-align: left;
   margin-bottom: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
-  .newReport-btn {
+  .btns {
+display: flex;
+  }
+  
+  .newReport-btn  {
     text-decoration: none;
     text-align: center;
     background-color: rgb(24, 119, 242);
     color: white;
     border: 1px solid grey;
-    padding: 5px 10px;
-    border-radius: 20px;
+    padding: 7px 26px;
+    border-radius: 80px;
     border: none;
     outline: none;
-    box-shadow: 0 0 5px 0.5px #555f61;
     font-size: 18px;
+    font-weight: 600;
 
     &:hover {
       transform: scale(1.1);
-  }
+     }
+
+ }  
 }
+
+.logOut {
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(24, 119, 242);
+  color: white;
+  padding: 7px 50px;
+  border-radius: 80px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  margin-right: 20px;
+  font-weight: 600;
+
+  &:hover {
+    transform: scale(1.1);
+   }
 }
+
 
 .report-content {
+  width: 80%;
+  margin: 0 auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
   .report {
-    margin: 40px;
+    width: 100%;
+   
   }
 }
+
+
