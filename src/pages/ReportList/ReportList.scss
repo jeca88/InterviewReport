@@ -9,9 +9,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  .btns {
-display: flex;
-  }
+    .btns {
+        display: flex;
+    }
   
   .newReport-btn  {
     text-decoration: none;
@@ -49,6 +49,16 @@ display: flex;
   &:hover {
     transform: scale(1.1);
    }
+}
+
+.arrow-back {
+  width: 90%;
+  margin: auto;
+  text-align: left;
+
+    i {
+      width: 50px;
+    }
 }
 
 

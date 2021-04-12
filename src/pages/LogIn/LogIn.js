@@ -40,7 +40,7 @@ const LogIn = () => {
     <div className="logIn">
       <form onSubmit={submitHandler}>
         <div className="form-inner">
-          <h2>Log in</h2>
+          <h2><i class="far fa-user"></i>Log in</h2>
           {errMessage && <span className="errMessage">{errMessage}</span>}
 
           <div className="form-group">

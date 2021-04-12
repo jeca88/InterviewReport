@@ -46,7 +46,7 @@ text-shadow: 2px 2px 4px rgb(175, 172, 172);
 
 .State-Status {
     margin-top: 80px;
-    border-top: 2px solid black;
+    border-top: 1px solid rgb(80, 79, 79);
         h6{
             font-size: 16px;
             margin-bottom: 5px;
@@ -55,7 +55,17 @@ text-shadow: 2px 2px 4px rgb(175, 172, 172);
 
         p{
             margin: 0;
+            font-weight: 400;
             padding: 0;
             margin-left: 10%;
         }
 }
+
+
+
+@media only screen and (max-width: 930px) {
+    .page-status h3 {
+        font-size: 17px;
+    }
+  
+ }

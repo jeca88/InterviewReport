@@ -88,7 +88,7 @@ const Wizard = (props) => {
         </div>
         <div className="Container-Page">
             <div className="Navigator-Page">
-                <div>
+                <div className='page-status'>
                     <h3 className={step === 1 ? "Active" : ""}><span>1</span>Select Candidate</h3>
                     <h3 className={step === 2 ? "Active" : ""}><span>2</span>Select Company</h3>
                     <h3 className={step === 3 ? "Active" : ""}><span>3</span>Fill Report Details</h3>

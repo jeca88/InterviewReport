@@ -33,6 +33,9 @@ const ReportList = (props) => {
                     <Link className="newReport-btn" to='/new-report'>Create Report</Link>
                 </div>
             </div>
+            <div className='arrow-back'>
+                <Link to="/"><i class="fas fa-arrow-left"></i></Link>
+            </div>
             <div className="report-content">
                 < Search items={reports} filters={filters}
                     updateResults={updateFilteredReports} />
