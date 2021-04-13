@@ -14,7 +14,7 @@ const ReportList = (props) => {
 
 
     const logOut = () => {
-        // localStorage.setItem('token', "");
+        localStorage.setItem('token', "");
         setToken("");
     }
 

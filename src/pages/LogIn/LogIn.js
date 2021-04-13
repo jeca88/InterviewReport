@@ -28,8 +28,9 @@ const LogIn = () => {
       .then((response) => response.json())
       .then((response) => {
         if (response.accessToken) {
-          localStorage.setItem("token", response.accessToken);
           setToken(response.accessToken);
+          localStorage.setItem("token", response.accessToken);
+          
         } else {
           throw new Error("Wrong email or password. Please try again!");
         }

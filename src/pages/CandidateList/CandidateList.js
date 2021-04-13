@@ -13,6 +13,7 @@ const CandidateList = (props) => {
   const filters = ['name'];
 
   const token = localStorage.getItem('token');
+  console.log('hi', token)
 
   const updateFilteredCandidates = (filtered) => {
     setFilteredCandidates(filtered);
