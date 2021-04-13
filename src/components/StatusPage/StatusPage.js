@@ -8,7 +8,7 @@ const StatusPage = (props) => {
         <div className="Message">
             <div>
                 <h4>Report is successful submitted! </h4>
-                <i class="far fa-smile-wink"></i>
+                <i className="far fa-smile-wink"></i>
             </div>
         </div>
     )

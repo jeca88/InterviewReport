@@ -68,10 +68,75 @@
    }
   
 
-   @media only screen and (max-width: 950px) {
-    .Report-container {
-        // flex-direction: column;
+   @media only screen and (max-width: 970px) {
+       .Report-container {
+           flex-wrap: wrap;
+           padding: 10px;
+
+             .report-company {
+                width: 48%;
+                margin: 0;
+                border-right: none;
+                border-bottom: solid 1px darkgray;
+                padding-bottom: 5px
+
+   }
+    
+            .report-candidate {
+                width: 48%;
+                margin: 0;
+                border-right: none;
+                border-bottom: solid 1px darkgray;
+                padding-bottom: 5px;
+      }
+      .report-date {
+          width: 48%;
+          border-right: none;
+          margin: 0%;
+          padding-left: 15px;
+          padding-top: 5px;
+        }
+    
+    .report-status {
+        width: 30%;
+        border-right: none;
+        margin: 0;
+        padding-top: 5px;
+        
     }
-   
+    
+    .report-icon {
+        width: 15%;
+        padding-top: 5px;
+    }}
 }
 
+@media only screen and (max-width: 650px) {
+    .Report-container {
+          .report-company {
+             width: 100%;
+             padding: 10px;
+
+}
+         .report-candidate {
+             width: 100%;
+             padding: 10px;
+   }
+   .report-date {
+       width: 100%;
+       padding: 10px;
+       border-bottom: solid 1px darkgray;
+     }
+ 
+ .report-status {
+     width: 100%;
+     padding: 10px;
+     border-bottom: solid 1px darkgray;
+ }
+ 
+ .report-icon {
+     width: 100%;
+     padding-top: 5px;
+ }}
+
+}

@@ -23,7 +23,7 @@ function App() {
   const [filteredReports, setFilteredReports] = useState(null);
   const [reports, setReports] = useState(null);
 
-  
+
 
   useEffect(() => {
     const url = "http://localhost:3333/api/candidates";
@@ -35,6 +35,7 @@ function App() {
       });
   }, [candidates === null]);
 
+
   useEffect(() => {
     const url = "http://localhost:3333/api/reports";
     fetch(url)
@@ -42,15 +43,14 @@ function App() {
       .then(data => {
         setReports(data)
         setFilteredReports(data);
-      }) 
+      })
   }, [reports === null]);
-
 
 
   return (
     <div className="App">
-      <CandidatesProvider 
-      value={{candidates, filteredCandidates, setFilteredCandidates}}>
+      <CandidatesProvider
+        value={{ candidates, filteredCandidates, setFilteredCandidates }}>
         <ReportsProvider value={{ reports, setReports, setFilteredReports, filteredReports }}>
           <Switch>
             <Route exact path="/" component={CandidateList} />

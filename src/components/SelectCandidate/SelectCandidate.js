@@ -6,7 +6,6 @@ const SelectCandidate = ({ candidates, nextStep, handleChange, filteredCandidate
 
     const filters = ['name'];
 
-
     const updateFilteredCandidates = (filtered) => {
         setFilteredCandidates(filtered);
     }
@@ -18,7 +17,7 @@ const SelectCandidate = ({ candidates, nextStep, handleChange, filteredCandidate
                 updateResults={updateFilteredCandidates} />
             <div className="Candidate-Wrapper">
                 {filteredCandidates.map(e =>
-                    <div className="Candidate-Content" onClick={() => handleChange(e.name, e.candidateId)}>
+                    <div className="Candidate-Content" onClick={() => handleChange(e.name)} key={e.id}>
                         <img src={e.avatar} alt="logo" />
                         <div className="Candidate-Info">
                             <h4>{e.name}</h4>

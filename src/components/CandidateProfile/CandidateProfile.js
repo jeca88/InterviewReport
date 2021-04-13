@@ -1,5 +1,5 @@
 import './CandidateProfile.scss';
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ const CandidateProfile = ({ candidate }) => {
 
     return (
 
-        <div className="Profile">
+        <div className="Profile" >
             <Link className="profile-content" to={`/candidate/${candidate.id}`}>
                 <img src={candidate.avatar} />
                 <div>

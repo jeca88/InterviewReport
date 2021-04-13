@@ -1,22 +1,23 @@
 import './Report.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Modal from '../../components/Modal/Modal';
 
 const Report = ({ report, setReports }) => {
 
-    const token = localStorage.getItem('token')
-    console.log(token);
-
     const [modal, setModal] = useState(false);
     const [reportsData, setReportsData] = useState(null);
+
+    const token = localStorage.getItem('token');
 
     const showModal = (rep) => {
         setModal(!modal);
         setReportsData(rep);
     }
+
     const closeModal = () => {
         setModal(false);
     }
+
     const getRealDate = (e) => {
         let realDate = new Date(e);
         let date = realDate.getDate();
@@ -25,6 +26,7 @@ const Report = ({ report, setReports }) => {
 
         return (`${date}.${month < 10 ? `0${month}` : `${month}`}.${year}`)
     }
+
     const deleteReport = (e) => {
         const url = "http://localhost:3333/api/reports/";
         fetch(url + e.id, {
@@ -34,11 +36,10 @@ const Report = ({ report, setReports }) => {
             },
         })
             .then(response => response.ok && setReports(null));
-
     }
 
     return (
-        <div className="Report-container">
+        <div className="Report-container" key={report.id}>
             <div className='report-company'>
                 <h3>{report.companyName}</h3>
                 <p>Company</p>
