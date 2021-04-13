@@ -24,7 +24,7 @@ function App() {
   const [reports, setReports] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('token'));
 
-  
+
 
   useEffect(() => {
     const url = "http://localhost:3333/api/candidates";
@@ -36,6 +36,7 @@ function App() {
       });
   }, [candidates === null]);
 
+
   useEffect(() => {
     const url = "http://localhost:3333/api/reports";
     fetch(url)
@@ -43,9 +44,8 @@ function App() {
       .then(data => {
         setReports(data)
         setFilteredReports(data);
-      }) 
+      })
   }, [reports === null]);
-
 
 
   return (

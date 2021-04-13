@@ -1,5 +1,5 @@
 import './ReportList.scss';
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import Report from '../../components/Report/Report';
 import { Link, Redirect } from 'react-router-dom';
 import { reportsContext } from '../../App';
@@ -7,7 +7,6 @@ import Search from '../../components/Search/Search';
 
 const ReportList = (props) => {
     const { reports, setReports, setFilteredReports, filteredReports, setToken, token } = useContext(reportsContext);
-
 
     const filters = ['candidateName', 'companyName'];
     // const token = localStorage.getItem('token');
@@ -23,6 +22,7 @@ const ReportList = (props) => {
         setFilteredReports(filtered);
     }
 
+
     return (
         <div className="reportList">
             {token == '' && <Redirect to='/login'></Redirect>}
@@ -34,7 +34,7 @@ const ReportList = (props) => {
                 </div>
             </div>
             <div className='arrow-back'>
-                <Link to="/"><i class="fas fa-arrow-left"></i></Link>
+                <Link to="/"><i className="fas fa-arrow-left"></i></Link>
             </div>
             <div className="report-content">
                 < Search items={reports} filters={filters}
@@ -42,7 +42,6 @@ const ReportList = (props) => {
                 <div className="report">
                     {filteredReports && filteredReports.map(rep => <Report report={rep} setReports={setReports} token={token} />)}
                 </div>
-
             </div>
         </div>
     )

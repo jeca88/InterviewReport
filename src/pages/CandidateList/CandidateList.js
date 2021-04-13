@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import "./CandidateList.scss";
 import CandidateProfile from "../../components/CandidateProfile/CandidateProfile";
 import Search from '../../components/Search/Search';
@@ -8,34 +8,37 @@ import { candidatesContext } from "../../App";
 
 
 const CandidateList = (props) => {
-  const {candidates, filteredCandidates, setFilteredCandidates} = useContext(candidatesContext);
+  const { candidates, filteredCandidates, setFilteredCandidates } = useContext(candidatesContext);
 
   const filters = ['name'];
+
+  const token = localStorage.getItem('token');
 
   const updateFilteredCandidates = (filtered) => {
     setFilteredCandidates(filtered);
   }
+
 
   return (
     <>
       <div className="Header">
         <div className="Logo">Interview Reports</div>
         <Link className="login-btn" to="./login">
-          Log in
+          {token ? "Reports" : "Log in"}
         </Link>
       </div>
       <div className="CandidateContainer">
         <div className="CandidatesSearch">
           <h2>Candidates</h2>
           <Search items={candidates}
-           filters = {filters} 
-           updateResults={updateFilteredCandidates}
-           />
+            filters={filters}
+            updateResults={updateFilteredCandidates}
+          />
         </div>
         <div className="CandidateWrapper">
-           {filteredCandidates.map((candidate) => (
-              <CandidateProfile  candidate={candidate}/>
-            ))}
+          {filteredCandidates.map((candidate) => (
+            <CandidateProfile candidate={candidate} key={candidate.id} />
+          ))}
         </div>
       </div>
     </>

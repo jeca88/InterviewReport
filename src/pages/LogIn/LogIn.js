@@ -10,9 +10,10 @@ const LogIn = () => {
   // const [token, setToken] = useState(localStorage.getItem('token'));
   const [errMessage, setErrMessage] = useState('');
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  
 
+
+  const submitHandler = (e) => {
     const url = "http://localhost:3333/login";
     fetch(url, {
       method: "POST",
@@ -27,8 +28,8 @@ const LogIn = () => {
       .then((response) => response.json())
       .then((response) => {
         if (response.accessToken) {
-          setToken(response.accessToken);
           localStorage.setItem("token", response.accessToken);
+          setToken(response.accessToken);
         } else {
           throw new Error("Wrong email or password. Please try again!");
         }
@@ -38,15 +39,15 @@ const LogIn = () => {
       });
   };
 
+
   return (
     <div className="logIn">
-      <form onSubmit={submitHandler}>
+      <form>
         <div className="form-inner">
-          <h2><i class="far fa-user"></i>Log in</h2>
+          <h2><i className="far fa-user"></i>Log in</h2>
           {errMessage && <span className="errMessage">{errMessage}</span>}
-
           <div className="form-group">
-            <label htmlFor="email">Email: </label>
+            <label className="email">Email: </label>
             <input
               type="email"
               name="email"
@@ -56,20 +57,18 @@ const LogIn = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password: </label>
+            <label className="password">Password: </label>
             <input
               type="password"
               name="password"
               id="password"
               onChange={(e) =>
-                setDetails({ ...details, password: e.target.value })
-              }
+                setDetails({ ...details, password: e.target.value })}
               value={password}
             />
           </div>
-          <input className='login-btn' type="submit" value="LOGIN" onClick={submitHandler} />
+          <input className='login-btn' type="button" value="LOGIN" onClick={submitHandler} />
           {token && <Redirect to="/reports" />}
-
         </div>
       </form>
     </div>

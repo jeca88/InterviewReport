@@ -8,20 +8,21 @@ const Modal = ({ reportsData, handleClose, modal, getRealDate }) => {
         <div className="Modal-Container">
             <section className="modal-main">
                 <h3>{reportsData.candidateName}</h3>
-                <div>
-                    <p>Company: {reportsData.companyName}</p>
-                    <p>Interview Date: {getRealDate(reportsData.interviewDate)}</p>
-                    <p>Phase: {reportsData.phase}</p>
-                    <p>Status: {reportsData.status}</p>
-                </div>
-                <div>
-                    <h3>Notes</h3>
-                    <p>{reportsData.note}</p>
+                <div className="Modal-Information">
+                    <div className="Modal-Info">
+                        <p className="Modal-Details"><b>Company: </b>{reportsData.companyName}</p>
+                        <p className="Modal-Details"><b>Interview Date: </b>{getRealDate(reportsData.interviewDate)}</p>
+                        <p className="Modal-Details"><b>Phase: </b>{reportsData.phase.toUpperCase()}</p>
+                        <p className="Modal-Details"><b>Status: </b>{reportsData.status.charAt(0).toUpperCase() + reportsData.status.slice(1)}</p>
+                    </div>
+                    <div className="Modal-Notes">
+                        <h4><b>Notes</b></h4>
+                        <p className="Modal-Details">{reportsData.note}</p>
+                    </div>
                 </div>
                 <button type="button" onClick={handleClose}>
                     Close
-          </button>
-
+                </button>
             </section>
         </div>
     )

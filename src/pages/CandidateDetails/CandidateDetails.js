@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 
 const CandidateDetails = (props) => {
   const { candidates } = useContext(candidatesContext);
-  const { reports, setReports } = useContext(reportsContext);
+  const { reports } = useContext(reportsContext);
 
   const [modal, setModal] = useState(false);
   const [report, setReport] = useState(null);
 
   const profile = candidates.find(e => e.id == props.match.params.id);
   const reportsData = reports && reports.filter(e => e.candidateName == profile.name);
-  console.log(reportsData);
+
 
   const showModal = (rep) => {
     setModal(!modal);
@@ -33,9 +33,12 @@ const CandidateDetails = (props) => {
 
     return `${date}.${month < 10 ? `0${month}` : `${month}`}.${year}`;
   };
+
+
   if (!profile) {
     return null;
   }
+
   return (
     <>
       <div className="Header">
@@ -44,7 +47,6 @@ const CandidateDetails = (props) => {
           Back
         </Link>
       </div>
-
       <div className="CandidateDetails">
         <div className="Info">
           <img src={profile.avatar} />
@@ -62,9 +64,7 @@ const CandidateDetails = (props) => {
               <h3>{profile.education}</h3>
             </div>
           </div>
-
         </div>
-
         <table className="TableGrid">
           <tr>
             <th>Company</th>
@@ -72,7 +72,7 @@ const CandidateDetails = (props) => {
             <th colSpan="2">Status</th>
           </tr>
           {reportsData && reportsData.map(e =>
-            <tr>
+            <tr key={e.id}>
               <td>{e.companyName}</td>
               <td>{getRealDate(e.interviewDate)}</td>
               <td>{e.status}</td>

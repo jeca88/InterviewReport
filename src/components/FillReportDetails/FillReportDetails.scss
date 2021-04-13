@@ -9,12 +9,15 @@
 .reports-selects {
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+    flex-wrap: wrap;
+    margin: 2%;
     color: blue;
 
     .date {
         width: 30%;
         text-align: left;
+        display: flex;
+        flex-wrap: wrap;
 
         p {
             margin: 0;
@@ -26,7 +29,8 @@
 
             
             input {
-                padding: 5px;
+                width: 100%;
+                padding: 5px 0px;
                 border: none;
                 outline: none;
                 border-radius: 8px;
@@ -52,7 +56,7 @@
 
         select {
             width: 100%;
-            padding: 5px;
+            padding: 5px 0px;
             border: none;
             outline: none;
             border-radius: 8px;
@@ -78,8 +82,8 @@
         }
 
         select {
-            width: 95%;
-            padding: 5px;
+            width: 100%;
+            padding: 5px 0px;
             border: none;
             outline: none;
             border-radius: 8px;
@@ -94,9 +98,10 @@
 }
 
 .notes {
-    width: 96%;
-    margin-left: 16px;
-    margin-top: 2%;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5%;
+   
 
     textarea {
         width: 100%;
@@ -151,3 +156,31 @@
      }
      }
 
+     @media only screen and (max-width: 510px) { 
+        .reports-selects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2%;
+            color: blue;
+        
+            .date {
+                width: 90%;
+                p{ margin-bottom: 5px;}
+            }
+             .phase{
+                width: 90%;
+                margin-top: 2%;
+                p{
+                    margin-bottom: 5px;
+                }
+             }
+             .status {
+                margin-top: 2%;
+                width: 90%;      
+                p{
+                    margin-bottom: 5px; 
+                 }
+            }
+        }
+    }

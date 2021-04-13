@@ -50,7 +50,7 @@ text-shadow: 2px 2px 4px rgb(175, 172, 172);
         h6{
             font-size: 16px;
             margin-bottom: 5px;
-             margin-left: 10%;
+         margin-left: 10%;
         }
 
         p{
@@ -62,10 +62,64 @@ text-shadow: 2px 2px 4px rgb(175, 172, 172);
 }
 
 
-
-@media only screen and (max-width: 930px) {
-    .page-status h3 {
-        font-size: 17px;
+ @media only screen and (max-width: 930px) {
+    .Container-Page {
+        justify-content: center;
     }
-  
+
+    .Navigator-Page {
+     display: flex;
+     width: 100%;
+     text-align: left;
+     margin-left: 0;
+     justify-content: center;
+     padding-top: 0;
  }
+ .page-status {
+     width: 48%;
+ }
+ .State-Status{
+     margin-top: 0;
+     border-top: none;
+     width: 48%;
+    padding-bottom: 20px;
+     h6{
+        font-size: 20px;
+        margin-top: 20px;
+     }
+ }
+ .Switch{
+     width: 100%;
+ }
+ }
+ 
+@media only screen and (max-width: 662px) {
+    .Header {
+     justify-content: center;
+      .Logo{
+         width: 100%;
+         text-align: center;
+     }
+  
+     .login-btn {
+       margin-top: 20px;
+     }
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .Navigator-Page {
+        flex-wrap: wrap;
+        justify-content: center;
+        
+    .page-status {
+        width: 100%;
+     
+    }
+    .State-Status{
+        width: 100%;
+       
+    }
+
+}
+}
