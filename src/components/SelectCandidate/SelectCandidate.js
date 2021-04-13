@@ -1,11 +1,11 @@
 import './SelectCandidate.scss';
 import Search from '../../components/Search/Search';
+import { useState } from 'react';
 
 
 const SelectCandidate = ({ candidates, nextStep, handleChange, filteredCandidates, setFilteredCandidates }) => {
-
+   
     const filters = ['name'];
-
 
     const updateFilteredCandidates = (filtered) => {
         setFilteredCandidates(filtered);

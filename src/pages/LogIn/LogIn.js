@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import "./LogIn.scss";
 import { Redirect } from "react-router-dom";
+import { reportsContext } from '../../App';
 
 const LogIn = () => {
+  const {token, setToken} = useContext(reportsContext);
   const [details, setDetails] = useState({ email: "", password: "" });
   const { email, password } = details;
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  // const [token, setToken] = useState(localStorage.getItem('token'));
   const [errMessage, setErrMessage] = useState('');
 
   const submitHandler = (e) => {

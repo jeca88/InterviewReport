@@ -2,10 +2,10 @@ import './Report.scss';
 import React, { useState, useEffect } from 'react';
 import Modal from '../../components/Modal/Modal';
 
-const Report = ({ report, setReports }) => {
+const Report = ({ report, setReports, token }) => {
 
-    const token = localStorage.getItem('token')
-    console.log(token);
+    // const token = localStorage.getItem('token')
+    // console.log(token);
 
     const [modal, setModal] = useState(false);
     const [reportsData, setReportsData] = useState(null);

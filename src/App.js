@@ -22,6 +22,7 @@ function App() {
   const [candidates, setCandidates] = useState([]);
   const [filteredReports, setFilteredReports] = useState(null);
   const [reports, setReports] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('token'));
 
   
 
@@ -51,7 +52,8 @@ function App() {
     <div className="App">
       <CandidatesProvider 
       value={{candidates, filteredCandidates, setFilteredCandidates}}>
-        <ReportsProvider value={{ reports, setReports, setFilteredReports, filteredReports }}>
+        <ReportsProvider 
+        value={{ reports, setReports, setFilteredReports, filteredReports, token, setToken }}>
           <Switch>
             <Route exact path="/" component={CandidateList} />
             <Route path="/candidate/:id" component={CandidateDetails} />

@@ -15,10 +15,8 @@ const Wizard = (props) => {
 
     const [step, setStep] = useState(1)
     const [name, setName] = useState("")
-
     const [company, setCompany] = useState("")
     const [infoReport, setInfoReport] = useState({ interviewDate: new Date(), phase: "", status: "", notes: "" });
-
     const { interviewDate, phase, status, notes } = infoReport;
 
     const token = localStorage.getItem('token')
@@ -31,8 +29,7 @@ const Wizard = (props) => {
         setStep(step - 1)
     };
 
-
-
+   
     const submitForm = () => {
         const url = "http://localhost:3333/api/reports/";
         fetch(url, {
