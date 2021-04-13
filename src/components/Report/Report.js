@@ -2,7 +2,7 @@ import './Report.scss';
 import React, { useState } from 'react';
 import Modal from '../../components/Modal/Modal';
 
-const Report = ({ report, setReports }) => {
+const Report = ({ report, setReports, token }) => {
 
     // const token = localStorage.getItem('token')
     // console.log(token);
@@ -10,7 +10,7 @@ const Report = ({ report, setReports }) => {
     const [modal, setModal] = useState(false);
     const [reportsData, setReportsData] = useState(null);
 
-    const token = localStorage.getItem('token');
+    // const token = localStorage.getItem('token');
 
     const showModal = (rep) => {
         setModal(!modal);
