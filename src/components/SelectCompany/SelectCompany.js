@@ -2,8 +2,9 @@ import { useState } from 'react';
 import './SelectCompany.scss';
 import { useEffect } from 'react';
 
-const SelectCompany = ({ nextStep, prevStep, handleChange }) => {
+const SelectCompany = ({ nextStep, prevStep, handleChange, clickedItem }) => {
     const [company, setCompany] = useState([]);
+    
 
     useEffect(() => {
         const url = "http://localhost:3333/api/companies";
@@ -15,8 +16,10 @@ const SelectCompany = ({ nextStep, prevStep, handleChange }) => {
     return (
         <div className="select">
             <ul>
-                {company.map(e => {
-                    return <li onClick={() => handleChange(e.name)} key={e.id}>{e.name}</li>
+                {company.map((e, index) => {
+                    return <li onClick={() => handleChange(e.name,index)} 
+                    className={index === clickedItem ? 'activeItem' : null}
+                    key={e.id}>{e.name}</li>
                 })
                 }
             </ul>

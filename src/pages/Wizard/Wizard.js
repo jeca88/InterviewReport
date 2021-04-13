@@ -16,9 +16,20 @@ const Wizard = (props) => {
     const [name, setName] = useState("")
     const [company, setCompany] = useState("")
     const [infoReport, setInfoReport] = useState({ interviewDate: new Date(), phase: "", status: "", notes: "" });
-    const { interviewDate, phase, status, notes } = infoReport;
+    const [clickedCandidate, setClickedCandidate] = useState(null);
+    const [clickedCompany, setClickedCompany] = useState(null);
 
     const token = localStorage.getItem('token')
+
+    const handleChangeCandidate = (name, index) => {
+        setName(name);
+        setClickedCandidate(index);
+    }
+
+    const handleChangeCompany = (company, index) => {
+        setCompany(company);
+        setClickedCompany(index);
+    }
 
     const nextStep = () => {
         setStep(step + 1)
@@ -59,13 +70,13 @@ const Wizard = (props) => {
         switch (step) {
             case 1:
                 return (<SelectCandidate candidates={candidates}
-                    nextStep={nextStep} handleChange={setName}
+                    nextStep={nextStep} handleChange={handleChangeCandidate} clickedItem={clickedCandidate}
                     filteredCandidates={filteredCandidates}
                     setFilteredCandidates={setFilteredCandidates}
                 />)
             case 2:
                 return (<SelectCompany nextStep={nextStep} prevStep={prevStep}
-                    handleChange={setCompany} />)
+                    handleChange={handleChangeCompany} clickedItem={clickedCompany}/>)
             case 3:
                 return (<FillReportDetails prevStep={prevStep} setInfoReport={setInfoReport}
                     infoReport={infoReport} submitForm={submitForm} />)
