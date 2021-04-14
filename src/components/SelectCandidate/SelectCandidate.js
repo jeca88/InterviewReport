@@ -1,6 +1,6 @@
 import './SelectCandidate.scss';
 import Search from '../../components/Search/Search';
-import { useState } from 'react';
+
 
 
 const SelectCandidate = ({ candidates, nextStep, handleChange, filteredCandidates, setFilteredCandidates, clickedItem }) => {
@@ -14,8 +14,8 @@ const SelectCandidate = ({ candidates, nextStep, handleChange, filteredCandidate
     return (
         <>
             <Search items={candidates}
-                filters={filters}
-                updateResults={updateFilteredCandidates} />
+            filters={filters}
+            updateResults={updateFilteredCandidates} />
             <div className="Candidate-Wrapper">
                 {filteredCandidates.map((e, index) =>
                     <div  className={`Candidate-Content ${index === clickedItem ? 'activeItem' : null}`}

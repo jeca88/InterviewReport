@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import './SelectCompany.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const SelectCompany = ({ nextStep, prevStep, handleChange, clickedItem }) => {
     const [company, setCompany] = useState([]);
@@ -19,8 +18,7 @@ const SelectCompany = ({ nextStep, prevStep, handleChange, clickedItem }) => {
                 {company.map((e, index) => {
                     return <li onClick={() => handleChange(e.name,index)} 
                     className={index === clickedItem ? 'activeItem' : null}
-                    key={e.id}>{e.name}</li>
-                })
+                    key={e.id}>{e.name}</li>})
                 }
             </ul>
             <div className="btns">

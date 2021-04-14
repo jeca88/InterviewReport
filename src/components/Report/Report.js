@@ -4,13 +4,9 @@ import Modal from '../../components/Modal/Modal';
 
 const Report = ({ report, setReports, token }) => {
 
-    // const token = localStorage.getItem('token')
-    // console.log(token);
-
     const [modal, setModal] = useState(false);
     const [reportsData, setReportsData] = useState(null);
 
-    // const token = localStorage.getItem('token');
 
     const showModal = (rep) => {
         setModal(!modal);

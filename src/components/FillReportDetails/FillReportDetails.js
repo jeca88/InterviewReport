@@ -1,14 +1,12 @@
 import './FillReportDetails.scss';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
-import { useState } from 'react';
+
 
 const FillReportDetails = ({ prevStep, setInfoReport, infoReport, submitForm }) => {
-
     const { interviewDate } = infoReport;
 
     const DatePick = () => {
-
         return (<DatePicker selected={interviewDate} onChange={date => setInfoReport({ ...infoReport, interviewDate: date })} />
         )
     }
