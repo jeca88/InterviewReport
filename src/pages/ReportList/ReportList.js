@@ -9,8 +9,6 @@ const ReportList = (props) => {
     const { reports, setReports, setFilteredReports, filteredReports, setToken, token } = useContext(reportsContext);
 
     const filters = ['candidateName', 'companyName'];
-    // const token = localStorage.getItem('token');
-    // console.log('hi', token)
 
 
     const logOut = () => {
@@ -34,13 +32,13 @@ const ReportList = (props) => {
                 </div>
             </div>
             <div className='arrow-back'>
-                <Link to="/"><i className="fas fa-arrow-left"></i></Link>
+                <Link className='backHome' to="/"><i className="fas fa-arrow-left"></i></Link>
             </div>
             <div className="report-content">
                 < Search items={reports} filters={filters}
                     updateResults={updateFilteredReports} />
                 <div className="report">
-                    {filteredReports && filteredReports.map(rep => <Report report={rep} setReports={setReports} token={token} />)}
+                    {filteredReports && filteredReports.map(rep => <Report report={rep} setReports={setReports} token={token} key={rep.id} />)}
                 </div>
             </div>
         </div>

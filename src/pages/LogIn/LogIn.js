@@ -4,13 +4,12 @@ import { Redirect } from "react-router-dom";
 import { reportsContext } from '../../App';
 
 const LogIn = () => {
-  const {token, setToken} = useContext(reportsContext);
+  const { token, setToken } = useContext(reportsContext);
   const [details, setDetails] = useState({ email: "", password: "" });
   const { email, password } = details;
-  // const [token, setToken] = useState(localStorage.getItem('token'));
   const [errMessage, setErrMessage] = useState('');
 
-  
+
 
 
   const submitHandler = (e) => {
@@ -30,7 +29,7 @@ const LogIn = () => {
         if (response.accessToken) {
           setToken(response.accessToken);
           localStorage.setItem("token", response.accessToken);
-          
+
         } else {
           throw new Error("Wrong email or password. Please try again!");
         }
