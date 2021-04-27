@@ -8,7 +8,6 @@ import StatusPage from '../../components/StatusPage/StatusPage'
 import { Link } from 'react-router-dom'
 
 const Wizard = (props) => {
-
     const { candidates, filteredCandidates, setFilteredCandidates } = useContext(candidatesContext);
     const { setReports } = useContext(reportsContext)
 

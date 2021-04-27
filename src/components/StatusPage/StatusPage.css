@@ -1,0 +1,21 @@
+.Message {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10%;
+}
+
+.Message h4 {
+  font-size: 30px;
+  color: #1877f2;
+}
+
+.Message i {
+  font-size: 30px;
+  color: #1877f2;
+}
+/*# sourceMappingURL=StatusPage.css.map */

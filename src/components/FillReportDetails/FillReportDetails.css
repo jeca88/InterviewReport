@@ -1,0 +1,201 @@
+.reports-cnt {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px 0.9px #699399;
+          box-shadow: 0 0 10px 0.9px #699399;
+}
+
+.reports-selects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 2%;
+  color: blue;
+}
+
+.reports-selects .date {
+  width: 30%;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.reports-selects .date p {
+  margin: 0;
+  margin-bottom: 5%;
+}
+
+.reports-selects .date .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.reports-selects .date .react-datepicker-wrapper input {
+  width: 100%;
+  padding: 5px 0 5px 5px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px 0.9px #699399;
+          box-shadow: 0 0 10px 0.9px #699399;
+}
+
+.reports-selects .date .react-datepicker-wrapper input:hover {
+  cursor: pointer;
+}
+
+.reports-selects .phase {
+  width: 30%;
+  text-align: left;
+}
+
+.reports-selects .phase p {
+  margin: 0;
+  margin-bottom: 5%;
+}
+
+.reports-selects .phase select {
+  width: 100%;
+  padding: 5px 0px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px 0.9px #699399;
+          box-shadow: 0 0 10px 0.9px #699399;
+}
+
+.reports-selects .phase select:hover {
+  cursor: pointer;
+}
+
+.reports-selects .status {
+  width: 30%;
+  text-align: left;
+}
+
+.reports-selects .status p {
+  margin: 0;
+  margin-bottom: 5%;
+}
+
+.reports-selects .status select {
+  width: 100%;
+  padding: 5px 0px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px 0.9px #699399;
+          box-shadow: 0 0 10px 0.9px #699399;
+}
+
+.reports-selects .status select:hover {
+  cursor: pointer;
+}
+
+.notes {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.notes textarea {
+  width: 100%;
+  height: 300px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px 0.9px #699399;
+          box-shadow: 0 0 10px 0.9px #699399;
+}
+
+.btns-cnt {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 17px;
+}
+
+.btns-cnt .prev {
+  text-decoration: none;
+  text-align: center;
+  background-color: #71777e;
+  color: white;
+  border: 1px solid grey;
+  padding: 8px 17px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.btns-cnt .prev:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.btns-cnt .submit {
+  text-decoration: none;
+  text-align: center;
+  background-color: #1877f2;
+  color: white;
+  border: 1px solid grey;
+  padding: 8px 24px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.btns-cnt .submit:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media only screen and (max-width: 510px) {
+  .reports-selects {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 2%;
+    color: blue;
+  }
+  .reports-selects .date {
+    width: 90%;
+  }
+  .reports-selects .date p {
+    margin-bottom: 5px;
+  }
+  .reports-selects .phase {
+    width: 90%;
+    margin-top: 2%;
+  }
+  .reports-selects .phase p {
+    margin-bottom: 5px;
+  }
+  .reports-selects .status {
+    margin-top: 2%;
+    width: 90%;
+  }
+  .reports-selects .status p {
+    margin-bottom: 5px;
+  }
+}
+/*# sourceMappingURL=FillReportDetails.css.map */

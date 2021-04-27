@@ -24,7 +24,7 @@ const Search = ({ items, filters, updateResults }) => {
                 return isMatched(item);
             })
 
-            updateResults(filteredItems);
+            updateResults(filteredItems, searchValue);
         }
     }, [searchValue])
 

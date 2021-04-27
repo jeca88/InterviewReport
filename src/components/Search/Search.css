@@ -1,0 +1,36 @@
+.search {
+  width: 400px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 100px;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0 0 5px 0.5px #699399;
+          box-shadow: 0 0 5px 0.5px #699399;
+}
+
+.search input:hover, .search input:focus {
+  border: 1.5px solid #009688;
+}
+
+.search i {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 14px;
+}
+
+@media only screen and (max-width: 540px) {
+  .search {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=Search.css.map */

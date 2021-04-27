@@ -1,0 +1,60 @@
+.select {
+  width: 90%;
+}
+
+.select ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.select ul li {
+  width: 100%;
+  border: 1px solid #12465a;
+  padding: 10px 0;
+}
+
+.select ul li:hover {
+  background-color: #4494fd;
+  color: white;
+  cursor: pointer;
+}
+
+.select ul:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.select .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.select .btns .prev {
+  text-decoration: none;
+  text-align: center;
+  background-color: #71777e;
+  color: white;
+  border: 1px solid grey;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.select .btns .prev:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.activeItem {
+  background-color: #1877f2;
+  color: white;
+}
+/*# sourceMappingURL=SelectCompany.css.map */

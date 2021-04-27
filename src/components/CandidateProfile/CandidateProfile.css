@@ -1,0 +1,45 @@
+.Profile {
+  width: 28%;
+  min-width: 330px;
+  border: none;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding: 20px 15px;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 5px 0.5px rgba(24, 119, 242, 0.9);
+          box-shadow: 0 0 5px 0.5px rgba(24, 119, 242, 0.9);
+}
+
+.Profile .profile-content {
+  text-decoration: none;
+  color: #1877f2;
+}
+
+.Profile img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 1%;
+  border-radius: 50%;
+  border: 2px solid #1877f2;
+}
+
+.Profile:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  background-color: #1877f2;
+  font-weight: bold;
+}
+
+.Profile:hover .profile-content {
+  color: white;
+}
+
+@media only screen and (max-width: 960px) {
+  .Profile {
+    margin-right: 0;
+  }
+}
+/*# sourceMappingURL=CandidateProfile.css.map */

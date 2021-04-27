@@ -9,6 +9,7 @@ import CandidateDetails from './pages/CandidateDetails/CandidateDetails';
 import ReportList from './pages/ReportList/ReportList'
 import Wizard from './pages/Wizard/Wizard'
 import LogIn from './pages/LogIn/LogIn'
+import faker from 'faker';
 
 export const candidatesContext = React.createContext({});
 export const reportsContext = React.createContext({});
@@ -32,8 +33,8 @@ function App() {
       .then(response => response.json())
       .then(data => {
         setFilteredCandidates(data);
-        setCandidates(data)
-      });
+        setCandidates(data.map(e => ({ ...e, avatar:  faker.internet.avatar()})));
+      })
   }, [candidates === null]);
 
 

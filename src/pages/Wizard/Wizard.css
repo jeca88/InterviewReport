@@ -1,0 +1,144 @@
+.Logo {
+  text-shadow: 2px 2px 4px #afacac;
+}
+
+.logIn-btn {
+  text-shadow: 0;
+}
+
+.Container-Page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+}
+
+.Navigator-Page {
+  width: 25%;
+  text-align: left;
+  margin-left: 25px;
+  padding-top: 35px;
+  font-weight: 600;
+}
+
+.Navigator-Page h3 {
+  font-size: 20px;
+}
+
+.Navigator-Page h3 span {
+  padding: 5px 15px;
+  border-right: 2px solid black;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.Switch {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 5px;
+}
+
+.Active {
+  color: #1877f2;
+  font-weight: bold;
+}
+
+.State-Status {
+  margin-top: 80px;
+  border-top: 1px solid #504f4f;
+}
+
+.State-Status h6 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-left: 10%;
+}
+
+.State-Status p {
+  margin: 0;
+  font-weight: 400;
+  padding: 0;
+  margin-left: 10%;
+}
+
+@media only screen and (max-width: 930px) {
+  .Container-Page {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .Navigator-Page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 0;
+  }
+  .page-status {
+    width: 48%;
+  }
+  .State-Status {
+    margin-top: 0;
+    border-top: none;
+    width: 48%;
+    padding-bottom: 20px;
+  }
+  .State-Status h6 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .Switch {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 662px) {
+  .Header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .Header .Logo {
+    width: 100%;
+    text-align: center;
+  }
+  .Header .login-btn {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .Navigator-Page {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .Navigator-Page .page-status {
+    width: 100%;
+  }
+  .Navigator-Page .State-Status {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=Wizard.css.map */

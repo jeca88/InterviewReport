@@ -1,0 +1,97 @@
+.CandidateContainer {
+  margin-top: 40px;
+}
+
+.CandidateWrapper {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.Header {
+  background-color: white;
+  color: #1877f2;
+  padding: 25px 10px;
+  font-weight: 1000;
+  text-align: left;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 0 10px 0.9px #699399;
+          box-shadow: 0 0 10px 0.9px #699399;
+}
+
+.Header .Logo {
+  font-size: 30px;
+}
+
+.Header .login-btn {
+  text-decoration: none;
+  text-align: center;
+  background-color: #1877f2;
+  color: white;
+  border: 1px solid grey;
+  padding: 7px 51px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.Header .login-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.CandidatesSearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 15px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.CandidatesSearch h2 {
+  margin: 0;
+  color: #1877f2;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 970px) {
+  .CandidateWrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .CandidatesSearch {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .CandidatesSearch h2 {
+    margin-bottom: 20px;
+  }
+}
+/*# sourceMappingURL=CandidateList.css.map */
